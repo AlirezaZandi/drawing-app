@@ -1,7 +1,7 @@
 import { MouseEventHandler, useEffect, useRef, useState } from 'react';
 import { io } from 'socket.io-client';
 
-const socket = io('http://localhost:8000');
+const socket = io('https://drawing-app-api.vercel.app/');
 
 export default function Home() {
   const [canSend, setCanSend] = useState(false);
