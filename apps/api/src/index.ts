@@ -5,14 +5,15 @@ import { Server } from 'socket.io';
 const app = express();
 const httpServer = createServer(app);
 const io = new Server(httpServer, {
-  /* options */
   cors: {
     origin: '*',
   },
 });
 
 io.on('connection', (socket) => {
-  console.log('user conected');
+  socket.on('mouse-move', (payload) => {
+    socket.broadcast.emit('mouse-move', payload);
+  });
 });
 
 httpServer.listen(8000);
