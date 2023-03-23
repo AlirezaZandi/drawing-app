@@ -17,3 +17,5 @@ io.on('connection', (socket) => {
 });
 
 httpServer.listen(8000);
+
+export { httpServer as app };
